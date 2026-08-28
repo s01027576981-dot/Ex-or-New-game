@@ -2678,7 +2678,7 @@ function lunchAfterJunho() {
             onclick="afterLunch()"
             class="next"
           >
-            🔔 오후 수업 시작
+            🔔하교 수업 끝내기
           </button>
 
         </div>
@@ -2696,9 +2696,380 @@ function lunchAfterJunho() {
    점심시간 이후
    ========================= */
 
-function afterLunch() {
+  function afterLunch() {
 
-  alert("오후 수업이 시작됩니다!");
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · AFTERNOON
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="오후 수업 교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🔔 수업 종료
+          </div>
+
+          <p>
+            오후 수업이 끝나고,
+            드디어 학교가 끝났다.
+          </p>
+
+          <p>
+            나는 가방을 챙기며 자리에서 일어났다.
+          </p>
+
+          <button
+            onclick="afterSchoolScene()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+  /* =========================
+   학교 끝 · 하교 준비
+   ========================= */
+
+function afterSchoolScene() {
+
+  const playerName =
+    localStorage.getItem("playerName");
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · AFTER SCHOOL
+      </div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            ${playerName}
+          </div>
+
+          <p>
+            드디어 끝났다……
+          </p>
+
+          <p>
+            오늘 하루 정말 정신없었네.
+          </p>
+
+          <p>
+            가방을 메고 교실을 나가려는 순간,
+            누군가 나를 불렀다.
+          </p>
+
+          <button
+            onclick="afterSchoolChoice()"
+            class="next"
+          >
+            뒤돌아보기
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   하교 선택
+   ========================= */
+
+function afterSchoolChoice() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · AFTER SCHOOL
+      </div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            선택
+          </div>
+
+          <p>
+            누구와 함께 집에 갈까?
+          </p>
+
+          <button
+            onclick="chooseAfterSchool('hojin')"
+          >
+            🐶 한호진과 함께 간다
+          </button>
+
+          <button
+            onclick="chooseAfterSchool('junho')"
+          >
+            🐱 김준호와 함께 간다
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   하교 선택 결과
+   ========================= */
+
+function chooseAfterSchool(character) {
+
+  if (character === "hojin") {
+
+    hojinFavor += 10;
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1 · AFTER SCHOOL
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              🐶 한호진
+            </div>
+
+            <p>
+              오, 같이 가려고?
+            </p>
+
+            <p>
+              오늘은 나랑 같이 가자!
+            </p>
+
+            <p>
+              나 오늘 너랑 놀면서 너한테 물어보고 싶은 것도 많았거든.
+            </p>
+
+            <p>
+              <strong>
+                ❤️ 한호진 호감도 +10
+              </strong>
+            </p>
+
+            <button
+              onclick="hojinRoute()"
+              class="next"
+            >
+              같이 가기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  } else {
+
+    junhoFavor += 10;
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1 · AFTER SCHOOL
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              🐱 김준호
+            </div>
+
+            <p>
+              ……너.
+            </p>
+
+            <p>
+              나랑 가려고..?
+            </p>
+
+            <p>
+              (얼굴이 붉어지며)뭐..그러던지..할말도 있으니깐..
+            </p>
+
+            <p>
+              <strong>
+                ❤️ 김준호 호감도 +10
+              </strong>
+            </p>
+
+            <button
+              onclick="junhoRoute()"
+              class="next"
+            >
+              준호와 함께 가기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =========================
+   호진 루트 시작
+   ========================= */
+
+function hojinRoute() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · HOJIN ROUTE
+      </div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🐶 한호진
+          </div>
+
+          <p>
+            오늘 진짜 재밌었다ㅋㅋ
+          </p>
+
+          <p>
+            근데 있잖아……
+          </p>
+
+          <p>
+            나 너한테 할 말이 있어.
+          </p>
+
+          <button
+            onclick="alert('호진 데이트 장면으로 이어집니다!')"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   준호 루트 시작
+   ========================= */
+
+function junhoRoute() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · JUNHO ROUTE
+      </div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🐱 김준호
+          </div>
+
+          <p>
+            …..우리 이렇게 대화나눈건 오랜만이네..
+          </p>
+
+          <p>
+            사실 오늘 너를 보고 계속 생각했어.
+          </p>
+
+          <p>
+            우리…… 다시 만나볼래..?
+          </p>
+
+          <button
+            onclick="alert('준호 재회 장면으로 이어집니다!')"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
 
 }
 
