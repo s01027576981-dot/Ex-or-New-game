@@ -137,8 +137,6 @@
       z-index: 5;
     }
 
-    /* 배경 이미지 */
-
     .background-image {
       position: absolute;
       inset: 0;
@@ -147,8 +145,6 @@
       object-fit: cover;
       z-index: 0;
     }
-
-    /* 화면을 어둡게 */
 
     .dark-overlay {
       position: absolute;
@@ -165,8 +161,6 @@
       margin: auto auto 0;
     }
 
-    /* 캐릭터/장면 이미지 */
-
     .image-box {
       text-align: center;
       margin-bottom: 15px;
@@ -180,8 +174,6 @@
       max-height: 55vh;
       object-fit: contain;
       border-radius: 14px;
-      display: block;
-      margin: 0 auto 15px;
       position: relative;
       z-index: 2;
     }
@@ -259,11 +251,16 @@
 <script>
 
   /* =========================
-     변수
+     소리
      ========================= */
 
   let alarmSound = null;
   let phoneRing = null;
+
+
+  /* =========================
+     호감도
+     ========================= */
 
   let junhoFavor = 0;
   let hojinFavor = 0;
@@ -332,6 +329,7 @@
     const birth =
       document.getElementById("playerBirth").value;
 
+
     if (!name || !age || !birth) {
 
       alert("이름, 나이, 생년월일을 모두 입력해주세요!");
@@ -339,9 +337,11 @@
       return;
     }
 
+
     localStorage.setItem("playerName", name);
     localStorage.setItem("playerAge", age);
     localStorage.setItem("playerBirth", birth);
+
 
     showRules();
   }
@@ -512,6 +512,7 @@
 
           </div>
 
+
           <div class="dialogue">
 
             <div class="speaker">
@@ -549,6 +550,7 @@
       console.log("알람 자동 재생이 제한되었습니다.");
 
     });
+
   }
 
 
@@ -565,6 +567,7 @@
       alarmSound.currentTime = 0;
 
       alarmSound = null;
+
     }
 
 
@@ -622,7 +625,7 @@
 
 
   /* =========================
-     다빈이에게 전화
+     다빈에게 전화
      ========================= */
 
   function nextScene2() {
@@ -638,7 +641,7 @@
         <img
           src="images/IMG_0225.jpeg"
           class="background-image"
-          alt="다빈이에게 전화가 오는 장면"
+          alt="전화 장면"
         >
 
         <div class="dark-overlay"></div>
@@ -696,6 +699,7 @@
       console.log("전화벨 자동 재생이 제한되었습니다.");
 
     });
+
   }
 
 
@@ -712,6 +716,7 @@
       phoneRing.currentTime = 0;
 
       phoneRing = null;
+
     }
 
 
@@ -726,7 +731,7 @@
         <img
           src="images/IMG_0225.jpeg"
           class="background-image"
-          alt="다빈이와 통화하는 장면"
+          alt="다빈이와 통화"
         >
 
         <div class="dark-overlay"></div>
@@ -844,7 +849,7 @@
         <img
           src="images/IMG_0225.jpeg"
           class="background-image"
-          alt="다빈이와 통화"
+          alt="다빈과 통화"
         >
 
         <div class="dark-overlay"></div>
@@ -1001,7 +1006,7 @@
 
 
   /* =========================
-     준호 다음 장면
+     준호
      ========================= */
 
   function nextScene7() {
@@ -1070,9 +1075,9 @@
         </div>
 
         <img
-          src="images/IMG_0211.jpeg"
+          src="images/IMG_0227.jpeg"
           class="background-image"
-          alt="학교 교실"
+          alt="학교로 가는 길"
         >
 
         <div class="dark-overlay"></div>
@@ -1291,14 +1296,24 @@
         </div>
 
         <img
-          src="images/IMG_0196.jpeg"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="한호진"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
 
         <div class="story-content">
+
+          <div class="image-box">
+
+            <img
+              src="images/IMG_0196.jpeg"
+              class="scene-image"
+              alt="한호진"
+            >
+
+          </div>
 
           <div class="dialogue">
 
@@ -1346,9 +1361,9 @@
         </div>
 
         <img
-          src="images/IMG_0196.jpeg"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="한호진"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
@@ -1409,9 +1424,9 @@
         </div>
 
         <img
-          src="images/IMG_0196.jpeg"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="한호진"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
@@ -1456,7 +1471,7 @@
 
 
   /* =========================
-     준호가 자고 있는 모습
+     준호가 자고 있음
      ========================= */
 
   function junhoSleep() {
@@ -1470,14 +1485,24 @@
         </div>
 
         <img
-          src="images/IMG_0198.webp"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="준호가 자는 모습"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
 
         <div class="story-content">
+
+          <div class="image-box">
+
+            <img
+              src="images/IMG_0198.webp"
+              class="scene-image"
+              alt="준호가 자는 모습"
+            >
+
+          </div>
 
           <div class="dialogue">
 
@@ -1533,9 +1558,9 @@
         </div>
 
         <img
-          src="images/IMG_0198.webp"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="준호가 자는 모습"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
@@ -1596,9 +1621,9 @@
         </div>
 
         <img
-          src="images/IMG_0198.webp"
+          src="images/IMG_0211.jpeg"
           class="background-image"
-          alt="준호"
+          alt="학교 교실"
         >
 
         <div class="dark-overlay"></div>
@@ -1643,7 +1668,7 @@
 
 
   /* =========================
-     다음 스토리 준비
+     현재 스토리 종료
      ========================= */
 
   function finishDay1_2() {
