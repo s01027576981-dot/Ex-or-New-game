@@ -797,53 +797,53 @@
 
   function schoolClassroom() {
 
-    document.getElementById("app").innerHTML = `
+  document.getElementById("app").innerHTML = `
 
-      <div class="story">
+    <div class="story">
 
-        <div class="day">
-          DAY 1
-        </div>
+      <div class="day">
+        DAY 1
+      </div>
 
-        <img
-  src="images/IMG_0211.jpeg"
-  class="scene-image"
-  alt="학교 교실"
->
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="학교 교실"
+      >
 
-        <div class="story-content">
+      <div class="dark-overlay"></div>
 
-          <div class="dialogue">
+      <div class="story-content">
 
-            <div class="speaker">
-              유다빈
-            </div>
+        <div class="dialogue">
 
-            <p>
-              빨리 들어가자!
-            </p>
-
-            <p>
-              선생님 오시기 전에 자리 잡아야 해!
-            </p>
-
-            <button
-              onclick="teacherScene()"
-              class="next"
-            >
-              교실로 들어가기
-            </button>
-
+          <div class="speaker">
+            유다빈
           </div>
+
+          <p>
+            빨리 들어가자!
+          </p>
+
+          <p>
+            선생님 오시기 전에 자리 잡아야 해!
+          </p>
+
+          <button
+            onclick="teacherScene()"
+            class="next"
+          >
+            교실로 들어가기
+          </button>
 
         </div>
 
       </div>
 
-    `;
+    </div>
 
-  }
-
+  `;
+}
 
   // =========================
   // 선생님 등장
@@ -907,11 +907,6 @@
           DAY 1
         </div>
 
-        <img
-  src="images/IMG_0196.jpeg"
-  class="scene-image"
-  alt="한호진"
->
         <div class="story-content">
 
           <div class="dialogue">
@@ -952,13 +947,21 @@
 
   function breakTime() {
 
-    document.getElementById("app").innerHTML = `
+        document.getElementById("app").innerHTML = `
 
       <div class="story">
 
         <div class="day">
           DAY 1 · BREAK TIME
         </div>
+
+        <img
+          src="images/IMG_0196.jpeg"
+          class="background-image"
+          alt="한호진"
+        >
+
+        <div class="dark-overlay"></div>
 
         <div class="story-content">
 
@@ -976,6 +979,23 @@
               무슨 일 있었어?
             </p>
 
+            <button
+              onclick="hojinChoice()"
+              class="next"
+            >
+              대답하기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+    
             <button
               onclick="hojinChoice()"
               class="next"
