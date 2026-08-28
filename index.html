@@ -736,20 +736,551 @@
     `;
   }
   // =========================
-  // DAY 1 종료
+  // 호감도
   // =========================
+
+  let junhoFavor = 0;
+  let hojinFavor = 0;
+
+
+  // =========================
+  // 학교 도착
+  // =========================
+
   function finishDay1() {
+
     document.getElementById("app").innerHTML = `
-      <div class="content">
-        <div class="subtitle">
-          DAY 1 COMPLETE
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
         </div>
-        <h2>계속...</h2>
-        <p>
-          이야기는 이제 막 시작되었다.
-        </p>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              유다빈
+            </div>
+
+            <p>
+              헉헉… 드디어 학교 도착했다!
+            </p>
+
+            <p>
+              너 진짜 늦을 뻔했어!
+            </p>
+
+            <button
+              onclick="schoolClassroom()"
+              class="next"
+            >
+              NEXT
+            </button>
+
+          </div>
+
+        </div>
+
       </div>
+
     `;
+
+  }
+
+
+  // =========================
+  // 교실
+  // =========================
+
+  function schoolClassroom() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              유다빈
+            </div>
+
+            <p>
+              빨리 들어가자!
+            </p>
+
+            <p>
+              선생님 오시기 전에 자리 잡아야 해!
+            </p>
+
+            <button
+              onclick="teacherScene()"
+              class="next"
+            >
+              교실로 들어가기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 선생님 등장
+  // =========================
+
+  function teacherScene() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              👨‍🏫 선생님
+            </div>
+
+            <p>
+              자, 모두 자리에 앉도록 하세요.
+            </p>
+
+            <p>
+              오늘부터 새로운 한 주가 시작됩니다.
+            </p>
+
+            <button
+              onclick="classScene()"
+              class="next"
+            >
+              NEXT
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 수업
+  // =========================
+
+  function classScene() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              나
+            </div>
+
+            <p>
+              다행이다…
+            </p>
+
+            <p>
+              일단 지각은 면했네.
+            </p>
+
+            <button
+              onclick="breakTime()"
+              class="next"
+            >
+              🔔 쉬는 시간
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 쉬는 시간
+  // =========================
+
+  function breakTime() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1 · BREAK TIME
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              🐶 한호진
+            </div>
+
+            <p>
+              야! 너 오늘 왜 이렇게 늦었어?
+            </p>
+
+            <p>
+              무슨 일 있었어?
+            </p>
+
+            <button
+              onclick="hojinChoice()"
+              class="next"
+            >
+              대답하기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 호진 선택지
+  // =========================
+
+  function hojinChoice() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1 · BREAK TIME
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              선택
+            </div>
+
+            <p>
+              호진에게 뭐라고 할까?
+            </p>
+
+            <button
+              onclick="chooseHojin(1)"
+            >
+              "아침에 늦잠 잤어…"
+            </button>
+
+            <button
+              onclick="chooseHojin(2)"
+            >
+              "몰라..,오늘은 진짜 큰일 날뻔 했어.."
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 호진 호감도 계산
+  // =========================
+
+  function chooseHojin(choice) {
+
+    if (choice === 1) {
+
+      hojinFavor += 5;
+
+    } else {
+
+      hojinFavor += 10;
+
+    }
+
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              🐶 한호진
+            </div>
+
+            <p>
+              ${choice === 1
+                ? "아하ㅋㅋ 다음엔 늦잠 자지 마!"
+                : "뭐야… 갑자기 저렇게 말하니까 좀 부끄럽네."}
+            </p>
+
+            <p>
+              <strong>
+                ❤️ 한호진 호감도 +${choice === 1 ? 5 : 10}
+              </strong>
+            </p>
+
+            <button
+              onclick="junhoSleep()"
+              class="next"
+            >
+              NEXT
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 준호가 자고 있는 모습
+  // =========================
+
+  function junhoSleep() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1 · BREAK TIME
+        </div>
+
+        <img
+          src="images/IMG_0197.webp"
+          class="background-image"
+          alt="준호"
+        >
+
+        <div class="dark-overlay"></div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              나
+            </div>
+
+            <p>
+              ……어?
+            </p>
+
+            <p>
+              저기 있는 사람…
+            </p>
+
+            <p>
+              준호……?
+            </p>
+
+            <p>
+              책상에 엎드려 자고 있다.
+            </p>
+
+            <button
+              onclick="junhoChoice()"
+              class="next"
+            >
+              가까이 가기
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 준호 선택지
+  // =========================
+
+  function junhoChoice() {
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              선택
+            </div>
+
+            <p>
+              어떻게 할까?
+            </p>
+
+            <button
+              onclick="chooseJunho(1)"
+            >
+              조용히 바라본다.
+            </button>
+
+            <button
+              onclick="chooseJunho(2)"
+            >
+              이름을 불러본다.
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 준호 호감도
+  // =========================
+
+  function chooseJunho(choice) {
+
+    if (choice === 1) {
+
+      junhoFavor += 5;
+
+    } else {
+
+      junhoFavor += 10;
+
+    }
+
+
+    document.getElementById("app").innerHTML = `
+
+      <div class="story">
+
+        <div class="day">
+          DAY 1
+        </div>
+
+        <div class="story-content">
+
+          <div class="dialogue">
+
+            <div class="speaker">
+              ❤️ 호감도
+            </div>
+
+            <p>
+              김준호 호감도:
+              <strong>${junhoFavor}</strong>
+            </p>
+
+            <p>
+              한호진 호감도:
+              <strong>${hojinFavor}</strong>
+            </p>
+
+            <p>
+              선택에 따라 캐릭터와의 관계가 달라집니다.
+            </p>
+
+            <button
+              onclick="finishDay1_2()"
+              class="next"
+            >
+              NEXT
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================
+  // 다음 스토리 준비
+  // =========================
+
+  function finishDay1_2() {
+
+    alert("다음 학교 이야기는 준비 중입니다!");
+
   }
 </script>
 </body>
