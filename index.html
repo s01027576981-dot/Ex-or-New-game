@@ -2166,8 +2166,8 @@ function playerSoccerThought() {
 }
 
 
-/* =========================
-   점심시간
+  /* =========================
+   점심시간 시작 · 복도
    ========================= */
 
 function lunchTime() {
@@ -2180,25 +2180,33 @@ function lunchTime() {
         DAY 1 · LUNCH TIME
       </div>
 
+      <img
+        src="images/IMG_0213.jpeg"
+        class="background-image"
+        alt="점심시간 복도"
+      >
+
+      <div class="dark-overlay"></div>
+
       <div class="story-content">
 
         <div class="dialogue">
 
           <div class="speaker">
-            🍱 점심시간
+            🍱 유다빈
           </div>
 
           <p>
-            어느새 점심시간이 되었다.
+            점심시간이다!
           </p>
 
           <p>
-            친구들과 함께 급식실로 향했다.
+            빨리 급식 먹으러 가자!
           </p>
 
           <button
+            onclick="lunchStartChoice()"
             class="next"
-            onclick="alert('점심시간 장면 준비 중!')"
           >
             NEXT
           </button>
@@ -2212,6 +2220,488 @@ function lunchTime() {
   `;
 
 }
+
+
+/* =========================
+   플레이어가 밥을 안 먹음
+   ========================= */
+
+function lunchStartChoice() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0213.jpeg"
+        class="background-image"
+        alt="점심시간 복도"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            나
+          </div>
+
+          <p>
+            나는 오늘은 별로 밥을 먹고 싶지 않았다.
+          </p>
+
+          <p>
+            먼저 가 있어.
+          </p>
+
+          <button
+            onclick="dabinLunchLeave()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   다빈이가 먼저 감
+   ========================= */
+
+function dabinLunchLeave() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0213.jpeg"
+        class="background-image"
+        alt="점심시간 복도"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            💕 유다빈
+          </div>
+
+          <p>
+            진짜 안 먹을 거야?
+          </p>
+
+          <p>
+            알았어. 그럼 나 먼저 갔다 올게!
+          </p>
+
+          <button
+            onclick="aloneClassroom()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   혼자 교실에 남음
+   ========================= */
+
+function aloneClassroom() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="빈 교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            나
+          </div>
+
+          <p>
+            다빈이가 급식실로 간 뒤,
+            나는 혼자 교실에 남았다.
+          </p>
+
+          <p>
+            조용하네……
+          </p>
+
+          <button
+            onclick="junhoEnterClassroom()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   준호가 교실로 들어옴
+   ========================= */
+
+function junhoEnterClassroom() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <div class="story-content">
+
+        <div class="image-box">
+
+          <img
+            src="images/IMG_0194.jpeg"
+            class="scene-image"
+            alt="준호가 교실로 들어오는 모습"
+          >
+
+        </div>
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🐱 김준호
+          </div>
+
+          <p>
+            ……어?
+          </p>
+
+          <p>
+            너 여기 있었네.
+          </p>
+
+          <button
+            onclick="junhoLunchTalk()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   준호와 단둘이 대화
+   ========================= */
+
+function junhoLunchTalk() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🐱 김준호
+          </div>
+
+          <p>
+            너 점심 안 먹어?
+          </p>
+
+          <p>
+            아까부터 계속 혼자 있던데.
+          </p>
+
+          <button
+            onclick="junhoLunchChoice()"
+            class="next"
+          >
+            대답하기
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   준호 점심 선택지
+   ========================= */
+
+function junhoLunchChoice() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            선택
+          </div>
+
+          <p>
+            준호에게 뭐라고 할까?
+          </p>
+
+          <button onclick="chooseJunhoLunch(1)">
+            "그냥… 별로 안 먹고 싶어서."
+          </button>
+
+          <button onclick="chooseJunhoLunch(2)">
+            "너는? 너도 안 먹었어?"
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   선택에 따른 준호 호감도
+   ========================= */
+
+function chooseJunhoLunch(choice) {
+
+  if (choice === 1) {
+    junhoFavor += 5;
+  } else {
+    junhoFavor += 10;
+  }
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            🐱 김준호
+          </div>
+
+          <p>
+            ${
+              choice === 1
+              ? "……그래. 밥은 챙겨 먹어."
+              : "나도 그냥… 여기 있으려고."
+            }
+          </p>
+
+          <p>
+            준호는 잠시 나를 바라보다가
+            시선을 피했다.
+          </p>
+
+          <p>
+            <strong>
+              ❤️ 김준호 호감도 +${choice === 1 ? 5 : 10}
+            </strong>
+          </p>
+
+          <button
+            onclick="lunchAfterJunho()"
+            class="next"
+          >
+            NEXT
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   점심시간 마무리
+   ========================= */
+
+function lunchAfterJunho() {
+
+  document.getElementById("app").innerHTML = `
+
+    <div class="story">
+
+      <div class="day">
+        DAY 1 · LUNCH TIME
+      </div>
+
+      <img
+        src="images/IMG_0211.jpeg"
+        class="background-image"
+        alt="교실"
+      >
+
+      <div class="dark-overlay"></div>
+
+      <div class="story-content">
+
+        <div class="dialogue">
+
+          <div class="speaker">
+            나
+          </div>
+
+          <p>
+            점심시간 동안,
+            나는 계속 준호를 의식하고 있었다.
+          </p>
+
+          <p>
+            예전과는 조금 달라진 것 같기도 하고……
+          </p>
+
+          <p>
+            ……나만 그렇게 느끼는 걸까?
+          </p>
+
+          <button
+            onclick="afterLunch()"
+            class="next"
+          >
+            🔔 오후 수업 시작
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   점심시간 이후
+   ========================= */
+
+function afterLunch() {
+
+  alert("오후 수업이 시작됩니다!");
+
+}
+
 
 </script>
 
